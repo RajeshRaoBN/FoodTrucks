@@ -49,6 +49,18 @@ def check_and_load_index():
 def index():
     return render_template('index.html')
 
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+# add a new hello route
+@app.route("/hello")
+def hello():
+    return "hello world!"
+
+
 @app.route('/debug')
 def test_es():
     resp = {}
@@ -119,4 +131,4 @@ def search():
 if __name__ == "__main__":
     ENVIRONMENT_DEBUG = os.environ.get("DEBUG", False)
     check_and_load_index()
-    app.run(host='0.0.0.0', port=5000, debug=ENVIRONMENT_DEBUG)
+    app.run(host='0.0.0.0', port=6000, debug=ENVIRONMENT_DEBUG)

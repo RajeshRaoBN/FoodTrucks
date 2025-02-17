@@ -19,7 +19,7 @@ RUN npm run build
 RUN pip3 install -r requirements.txt
 
 # expose port
-EXPOSE 5000
+EXPOSE 6000
 
 # start app
 CMD [ "python3", "./app.py" ]
